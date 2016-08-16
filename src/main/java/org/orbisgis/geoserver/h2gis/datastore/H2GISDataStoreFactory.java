@@ -193,7 +193,7 @@ public class H2GISDataStoreFactory extends JDBCDataStoreFactory {
             }
         } else if (baseDirectory == null) {
             //use current working directory
-            dataSource.setUrl("jdbc:h2:" + database + ";AUTO_SERVER=TRUE"
+            dataSource.setUrl("jdbc:h2:" + database + ""
                     + (mvcc != null ? (";MVCC=" + mvcc) : "")
                     + (mvstore != null ? (";MVSTORE=" + mvstore) : ""));
         } else {
@@ -206,7 +206,7 @@ public class H2GISDataStoreFactory extends JDBCDataStoreFactory {
                 location = database;
             }
 
-            dataSource.setUrl("jdbc:h2:file:" + location + ";AUTO_SERVER=TRUE"
+            dataSource.setUrl("jdbc:h2:file:" + location + ""
                     + (mvcc != null ? (";MVCC=" + mvcc) : "")
                     + (mvstore != null ? (";MVSTORE=" + mvstore) : ""));
         }
